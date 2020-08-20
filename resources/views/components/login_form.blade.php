@@ -1,24 +1,33 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <form name="sentMessage" id="contactForm" novalidate="">
+            <form method="post" action="{{ route('login') }}">
+                @csrf
                 <div class="control-group">
-                    <div class="form-group floating-label-form-group controls floating-label-form-group-with-value warning">
+                    <div class="form-group floating-label-form-group controls floating-label-form-group-with-value">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email" id="email" required="" data-validation-required-message="Please enter your email address." aria-invalid="true">
-                        <p class="help-block text-danger"></p>
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <p class="help-block text-danger">{{ $message }}</p>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls floating-label-form-group-with-value">
                         <label>Password</label>
-                        <input type="tel" class="form-control" placeholder="Password" id="password" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
                         <p class="help-block text-danger"></p>
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <p class="help-block text-danger">{{ $message }}</p>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <br>
-                <div id="success"></div>
-                <button type="submit" class="btn btn-primary" id="sendMessageButton">Log in</button>
+                <button type="submit" class="btn btn-primary">Log in</button>
             </form>
         </div>
     </div>

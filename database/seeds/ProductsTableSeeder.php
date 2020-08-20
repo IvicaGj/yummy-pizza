@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Product;
+use App\Models\Product;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -29,7 +29,7 @@ class ProductsTableSeeder extends Seeder
         Product::create([
             'name' => 'Calzone',
             'description' => 'tomato sauce, mozzarella, mushrooms, ham, eggs',
-            'image' => 'https://lh3.googleusercontent.com/proxy/CE3Y_pKW5_m8OimobXb_7yib1xrsqV8rSpgjuYGK52o0FWevgAJ7srHHKUjmmdQZEi6nnvw7arT-F9XcumfXGGlEk-kFya9tjBg3pN_UeFIjpMw3QURRxO5S98TycCWjb6JiJH5j0N4u5UyWVyVMew', 
+            'image' => 'https://cdn.tasteatlas.com/images/dishes/2dd9d07402f9404bb1149da811a0c42d.jpg?w=600&h=450', 
             'price' => 20,
         ]);
 

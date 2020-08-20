@@ -13,17 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', 'MainController@index');
 Route::get('/', function() {
     return view('home');
 });
 
-Route::get('/login', 'MainController@login');
+Route::get('/menu', 'MenuController@index');
 
-Route::get('/menu', 'MainController@menu');
+Route::get('/cart', 'CartController@cart');
 
-Route::get('/cart', 'MainController@cart');
+Route::get('/add/{$item}', 'CartController@addToCart');
 
-Route::get('/checkout', 'MainController@checkout');
+Route::get('/checkout', 'OrderController@checkout');
 
-Route::get('/confimation', 'MainController@confirmation');
+Route::get('/confimation', 'OrderController@confirmation');
+
+Auth::routes(['register' => false]);

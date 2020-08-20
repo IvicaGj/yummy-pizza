@@ -10,24 +10,4 @@ class MainController extends Controller
     {
         return view('home');
     }
-
-    public function login()
-    {
-        return view('login');
-    }
-
-    public function menu()
-    {
-        return view('menu');
-    }
-
-    public function placeOrder()
-    {
-        return null;
-    }
-
-    public function confirmOrder()
-    {
-        return null;
-    }
 }

@@ -13,9 +13,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/menu') }}"">Menu</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/login') }}">Log In</a>
-                </li>
+                @if (Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @else 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}">Log In</a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/cart') }}">Cart</a>
                 </li>
