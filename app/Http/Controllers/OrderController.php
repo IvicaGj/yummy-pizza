@@ -39,7 +39,7 @@ class OrderController extends Controller
 
         foreach ($cart as $key => $item) {
             $this->order->persist([
-                'order_id' => $order['id'],
+                'order_id' => $order->id,
                 'product_id' => $key,
                 'quantity' => (int)$item['quantity']
             ]);
