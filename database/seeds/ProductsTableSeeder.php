@@ -29,7 +29,7 @@ class ProductsTableSeeder extends Seeder
         Product::create([
             'name' => 'Calzone',
             'description' => 'tomato sauce, mozzarella, mushrooms, ham, eggs',
-            'image' => 'https://cdn.tasteatlas.com/images/dishes/2dd9d07402f9404bb1149da811a0c42d.jpg?w=600&h=450', 
+            'image' => 'https://therecipecritic.com/wp-content/uploads/2020/02/calzone-7-500x500.jpg', 
             'price' => 20,
         ]);
 

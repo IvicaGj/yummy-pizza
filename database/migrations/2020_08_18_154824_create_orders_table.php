@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('city');
             $table->integer('zip_code');
             $table->bigInteger('phone_number');
-            $table->integer('billing_tax');
+            $table->float('billing_tax');
             $table->integer('billing_total');
             $table->boolean('delivered')->default(false);
             $table->bigInteger('user_id')->unsigned()->nullable();
