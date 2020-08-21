@@ -19,12 +19,14 @@ Route::get('/', function() {
 
 Route::get('/menu', 'MenuController@index');
 
-Route::get('/cart', 'CartController@cart');
+Route::get('/cart', 'CartController@index');
 
-Route::get('/add/{$item}', 'CartController@addToCart');
+Route::post('/add', 'CartController@add');
 
 Route::get('/checkout', 'OrderController@checkout');
 
-Route::get('/confimation', 'OrderController@confirmation');
+Route::post('/create', 'OrderController@create');
+
+Route::get('/confirm', 'OrderController@confirm');
 
 Auth::routes(['register' => false]);

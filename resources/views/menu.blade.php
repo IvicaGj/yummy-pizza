@@ -15,3 +15,26 @@
 @section('footer')
     @include('components.footer')
 @endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.add-to-cart').click(function() {
+                var id = $(this).attr('data-id');
+                $.ajax({
+                    type: "POST",
+                    url: $(this).attr('data-url'),
+                    data: {
+                        "id": id,
+                        "qty": $('#' + id + '-quantity').val(),
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    success: function() {
+                        $('#' + id + '-check').show();
+                    },
+                    dataType: 'JSON'
+                });
+            });
+        });
+    </script>
+@endsection

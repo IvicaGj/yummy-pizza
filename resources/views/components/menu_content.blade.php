@@ -11,7 +11,9 @@
                         <p><span class="font-weight-bold">Price:</span> ${{ $p->price }}</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-dark float-right" type="button" data-id="{{ $p->id }}">Add To Cart</button>
+                        <input type="number" name="quantity" id="{{$p->id}}-quantity" min="1" max="10" value="1">
+                        <i class="fas fa-check" style="display:none" id="{{ $p->id }}-check"></i>
+                        <button class="btn btn-dark float-right add-to-cart" type="button" data-id="{{ $p->id }}" data-url="{{ url('/add') }}">Add To Cart</button>
                     </div>
                 </div>
             </div>

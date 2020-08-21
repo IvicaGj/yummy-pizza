@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->integer('zip_code');
-            $table->integer('phone_number');
+            $table->bigInteger('phone_number');
             $table->integer('billing_tax');
             $table->integer('billing_total');
             $table->boolean('delivered')->default(false);

@@ -21,6 +21,19 @@ class ProductRepository
         $this->product = $product;        
     }
 
+    /**
+     * Retrieve a single product
+     */
+    public function findProduct(int $id)
+    {
+        $product = Product::findOrFail($id);
+
+        return $product;
+    }
+
+    /** 
+     * Retrieve all products
+     */
     public function getProducts(int $perPage) 
     {
         $products = Product::paginate($perPage);
