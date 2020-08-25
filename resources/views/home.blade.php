@@ -5,13 +5,23 @@
 @endsection
 
 @section('header')
-    @include('components.header')
+    @include('components.headers.header')
 @endsection
 
 @section('content')
-    @include('components.home_content')
+    @include('components.content.home_content')
 @endsection
 
 @section('footer')
     @include('components.footer')
+@endsection
+
+@section('scripts')
+    @if (session('message'))
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#messageModal').modal('show');
+        });
+    </script>
+    @endif
 @endsection

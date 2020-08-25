@@ -18,13 +18,13 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls floating-label-form-group-with-value">
                         <label>Zip Code</label>
-                        <input id="zipcode" type="number" class="form-control" placeholder="12345" name="zipcode" required>
+                        <input id="zipcode" type="number" class="form-control" placeholder="90210" name="zipcode" required>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls floating-label-form-group-with-value">
                         <label>Phone Number</label>
-                        <input id="phonenumber" type="tel" class="form-control" placeholder="Phone Number" name="phonenumber" required>
+                        <input id="phonenumber" type="number" class="form-control" placeholder="Phone Number" name="phonenumber" required>
                     </div>
                 </div>
                 <br>
@@ -33,3 +33,4 @@
         </div>
     </div>
 </div>
+<hr/>

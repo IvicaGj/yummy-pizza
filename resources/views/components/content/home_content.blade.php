@@ -1,11 +1,24 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
+            <div id="messageModal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <p>{{ session('message') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            @endif
+            </div>
             <div class="post-preview">
                 <div>   
                     <h3 class="post-title">
@@ -48,3 +61,5 @@
         </div>
     </div>
 </div>
+<br/>
+<hr/>

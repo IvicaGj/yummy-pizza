@@ -5,11 +5,11 @@
 @endsection
 
 @section('header')
-    @include('components.checkout_header')
+    @include('components.headers.header_2')
 @endsection
 
 @section('content')
-    @include('components.checkout_content')
+    @include('components.content.checkout_content')
 @endsection
 
 @section('footer')

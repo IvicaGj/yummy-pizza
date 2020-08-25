@@ -13,7 +13,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/menu') }}"">Menu</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/about') }}"">About us</a>
+                </li>
                 @if (Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/history') }}">My orders</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -24,9 +30,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/login') }}">Log In</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/register') }}">Sign Up</a>
+                    </li>
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/cart') }}">Cart</a>
+                    <a class="nav-link" href="{{ url('/cart') }}"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>

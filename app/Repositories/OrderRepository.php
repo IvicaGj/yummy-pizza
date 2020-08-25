@@ -4,7 +4,8 @@ namespace App\Repositories;
 
 use App\Models\Order;
 use App\Models\OrderProduct;
-use Exception;
+use App\Models\Product;
+use App\Models\User;
 
 class OrderRepository
 {
@@ -54,5 +55,13 @@ class OrderRepository
         ]);
 
         return $orderProduct;
+    }
+
+    public function getHistory(User $user)
+    {
+        return $this->order->where('user_id', '=', $user['id'])
+                        ->orderBy('created_at', 'desc')
+                        ->with('products', 'user')
+                        ->paginate(3);
     }
 }

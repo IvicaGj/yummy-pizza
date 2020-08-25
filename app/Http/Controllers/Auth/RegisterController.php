@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -64,6 +65,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Session::flash('message', 'Welcome to Yummy Pizza! We are eagerly awaiting your first order!');
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

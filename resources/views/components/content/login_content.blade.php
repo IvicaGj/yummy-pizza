@@ -26,9 +26,11 @@
                         @enderror
                     </div>
                 </div>
-                <br>
+                <br/>
                 <button type="submit" class="btn btn-primary">Log in</button>
+                <p><small>Don't have an account yet? Please <a href="{{ url('/register') }}">register</a></small></p>
             </form>
         </div>
     </div>
 </div>
+<hr/>

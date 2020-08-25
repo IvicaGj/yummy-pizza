@@ -13,20 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view('home');
-});
+Route::get('/', 'MainController@home')->name('home');
 
-Route::get('/menu', 'MenuController@index');
+Route::get('/about', 'MainController@about')->name('about');
 
-Route::get('/cart', 'CartController@index');
+Route::get('/menu', 'MenuController@index')->name('menu');
 
-Route::post('/add', 'CartController@add');
+Route::get('/cart', 'CartController@index')->name('cart');
 
-Route::get('/checkout', 'OrderController@checkout');
+Route::post('/add', 'CartController@add')->name('addToCart');
 
-Route::post('/create', 'OrderController@create');
+Route::get('/checkout', 'OrderController@checkout')->name('checkout');
 
-Route::get('/confirm', 'OrderController@confirm');
+Route::post('/create', 'OrderController@create')->name('create');
 
-Auth::routes(['register' => false]);
+Route::get('/confirm', 'OrderController@confirm')->name('confirm');
+
+Route::get('/history', 'OrderController@history')->name('history');
+
+Auth::routes();

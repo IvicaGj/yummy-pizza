@@ -26,7 +26,7 @@ class ProductRepository
      */
     public function findProduct(int $id)
     {
-        $product = Product::findOrFail($id);
+        $product = $this->product->findOrFail($id);
 
         return $product;
     }
@@ -36,7 +36,7 @@ class ProductRepository
      */
     public function getProducts(int $perPage) 
     {
-        $products = Product::paginate($perPage);
+        $products = $this->product->paginate($perPage);
         
         return $products;
     }

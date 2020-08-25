@@ -40,13 +40,22 @@ class OrderController extends Controller
         foreach ($cart as $key => $item) {
             $this->order->persist([
                 'order_id' => $order->id,
-                'product_id' => $key,
-                'quantity' => (int)$item['quantity']
+                'product_id' => $item['id'],
+                'quantity' => (int)$item['quantity'],
+                'size' => $item['size']
             ]);
         }
 
         $request->session()->forget('cart');
 
         return redirect('/')->with('message', 'Order Successful! Expect our delivery guys shortly!');
+    }
+
+    public function history()
+    {
+        $user = auth()->user();
+        $history = $this->order->getHistory($user);
+    
+        return view('history')->with('history', $history);
     }
 }

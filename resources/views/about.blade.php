@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    @include('components.content.login_content')
+    @include('components.content.about_content')
 @endsection
 
 @section('footer')
